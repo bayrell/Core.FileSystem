@@ -18,9 +18,9 @@
 
 namespace Core.FileSystem;
 
+use Runtime.Interfaces.AssetsInterface;
 use Runtime.Interfaces.ContextInterface;
 use Runtime.Interfaces.ModuleDescriptionInterface;
-use Core.Interfaces.AssetsInterface;
 
 
 class ModuleDescription implements ModuleDescriptionInterface, AssetsInterface
@@ -77,24 +77,9 @@ class ModuleDescription implements ModuleDescriptionInterface, AssetsInterface
 	
 	
 	/**
-	 * Returns required assets
-	 * @return Map<string, string>
-	 */	
-	lambda Collection<string> assets(RenderContainer context) => null;
-	
-	
-	
-	/**
 	 * Returns sync loaded files
 	 */		
-	lambda Collection<string> resources(RenderContainer context) => null;
-	
-	
-	
-	/**
-	 * Init render container
-	 */
-	lambda RenderContainer initContainer(RenderContainer container) => container;
+	lambda Collection<string> resources() => null;
 	
 	
 	
