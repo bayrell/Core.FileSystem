@@ -114,7 +114,7 @@ interface FileProviderInterface
 	 * @param string path
 	 * @return bool
 	 */
-	async bool save(ContextInterface context, string path, Collection<bytes> bytes);
+	async bool save(ContextInterface context, string path, Collection<bytes> bytes, int offset = 0, int length = -1);
 	
 	
 	
@@ -123,6 +123,6 @@ interface FileProviderInterface
 	 * @param string path
 	 * @return Collection<bytes>
 	 */
-	async Collection<bytes> read(ContextInterface context, string path);
+	async Collection<bytes> read(ContextInterface context, string path, int offset = 0, int length = -1);
 	
 } 
