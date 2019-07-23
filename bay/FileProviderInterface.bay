@@ -1,0 +1,128 @@
+/*!
+ *  Bayrell Core Library
+ *
+ *  (c) Copyright 2018-2019 "Ildar Bikmamatov" <support@bayrell.org>
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+namespace Core.FileSystem;
+
+use Core.FileSystem.FileNode;
+
+
+interface FileProviderInterface
+{
+	
+	
+	/**
+	 * Returns files and folders from directory
+	 * @param string path
+	 * @return Collection<string> - Result
+	 */
+	async Collection<FileNode> getDirectoryListing(ContextInterface context, string path="/");
+	
+	
+	
+	/**
+	 * Create new folder
+	 * @param string folderpath
+	 * @return bool
+	 */
+	async bool createFolder(ContextInterface context, string folderpath, bool recursive = false);
+	
+	
+	
+	/**
+	 * Create new file
+	 * @param string path
+	 * @param bool clear
+	 * @return bool
+	 */
+	async bool createFile(ContextInterface context, string filepath, bool clear = false);
+	
+	
+	
+	/**
+	 * Rename file or folder
+	 * @param string path
+	 * @param string new_name
+	 * @return bool
+	 */
+	async bool rename(ContextInterface context, string path, string new_name);
+	
+	
+	
+	/**
+	 * Delete file
+	 * @param string path
+	 * @param string recursive
+	 * @return bool
+	 */
+	async bool delete(ContextInterface context, string path, string recursive = false);
+	
+	
+	
+	/**
+	 * Returns true if directory
+	 * @param string path
+	 * @return bool
+	 */
+	async bool isDir(ContextInterface context, string path);
+	
+	
+	
+	/**
+	 * Returns true if file
+	 * @param string path
+	 * @return bool
+	 */
+	async bool isFile(ContextInterface context, string path);
+	
+	
+	
+	/**
+	 * Returns true if exists
+	 * @param string path
+	 * @return bool
+	 */
+	async bool isExists(ContextInterface context, string path);
+	
+	
+	
+	/**
+	 * Returns file size
+	 * @param string path
+	 * @return int
+	 */
+	async int size(ContextInterface context, string path);
+	
+	
+	
+	/**
+	 * Save file
+	 * @param string path
+	 * @return bool
+	 */
+	async bool save(ContextInterface context, string path, Collection<bytes> bytes);
+	
+	
+	
+	/**
+	 * Read file
+	 * @param string path
+	 * @return Collection<bytes>
+	 */
+	async Collection<bytes> read(ContextInterface context, string path);
+	
+} 

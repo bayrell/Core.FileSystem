@@ -63,7 +63,7 @@ class ModuleDescription implements ModuleDescriptionInterface, AssetsInterface
 		'Core.FileSystem.FileIOResult',
 		'Core.FileSystem.FileNode',
 		'Core.FileSystem.FileStat',
-		'Core.FileSystem.FileSystemInterface',
+		'Core.FileSystem.FileProviderInterface',
 		'Core.FileSystem.ModuleDescription',
 	];
 	
